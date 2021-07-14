@@ -1,0 +1,16 @@
+<div>
+  <div class="nav">
+    <span class="logo">BLOGMODO</span>
+    <span 
+      ng-class="$ctrl.view === 'feed' ? 'nav-selected' : 'nav-unselected'"
+      ng-click="$ctrl.changeView('feed')">
+      See all Posts
+    </span>
+    <span class="nav-unselected">Write a Post</span>
+    <span class="nav-unselected">Admin</span>
+  </div>
+  <div class="main" ng-switch on="$ctrl.view">
+    <feed ng-switch-when="feed" change-view="$ctrl.changeView"></feed>
+    <post ng-switch-default></post>
+  </div>
+</div>
